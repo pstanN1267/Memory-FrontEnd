@@ -1,0 +1,44 @@
+<div class="flex flex-col gap-4">
+  <a class="flex items-center gap-2" routerLink="../">
+    <ng-icon name="heroArrowLeft"></ng-icon>
+    Powrót
+  </a>
+
+  <div class="flex justify-between">
+    <div class="font-bold">Kategorie</div>
+    <button (click)="showNewCategory = true">
+      <ng-icon name="heroPlusCircle"></ng-icon>
+      <span>Dodaj</span>
+    </button>
+  </div>
+
+  <div class="flex flex-col" *ngIf="showNewCategory">
+    <label class="text-sm">Nazwa</label>
+    <div class="flex items-center gap-4">
+      <input type="text" [(ngModel)]="newCategory" /> <!--dwustronne wiązanie-->
+      <button (click)="addCategory()">
+        <ng-icon name="heroCheckCircle"></ng-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <ng-container *ngIf="categoriesList.length; else noCategories">
+      <!--Można pominąć 0, bo domyslnie jest false(czyli 0)-->
+      <div
+        class="flex items-center gap-4"
+        *ngFor="let c of categoriesList; let i = index"
+      >
+        <div class="white-list-item">{{ c.name }}</div>
+        <button (click)="removeCategory(i)">
+          <ng-icon name="heroNoSymbol"></ng-icon>
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-template #noCategories
+      ><!--to idzie do warunku-->
+      <div class="text-center">Nie posiadasz żadnej kategorii</div>
+    </ng-template>
+  </div>
+</div>
