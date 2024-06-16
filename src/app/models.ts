@@ -1,6 +1,7 @@
 export interface Category {
   id: number;
   name: string;
+<<<<<<< HEAD
 }
 
 export interface Card {
@@ -8,4 +9,7 @@ export interface Card {
   categoryId: number;
   term: string;
   definition: string;
+=======
+
+>>>>>>> Memory-FrontEnd/master
 }

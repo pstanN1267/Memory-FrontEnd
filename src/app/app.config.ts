@@ -14,13 +14,21 @@ import {
   heroPlusCircle,
   heroRocketLaunch,
 } from '@ng-icons/heroicons/outline';
+<<<<<<< HEAD
 import { provideHttpClient } from '@angular/common/http';
+=======
+import {provideHttpClient} from "@angular/common/http";
+>>>>>>> Memory-FrontEnd/master
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideRouter(routes),
+<<<<<<< HEAD
     provideNgIconsConfig({ size: '1.5em' }),
+=======
+    provideNgIconsConfig({size: '1.5em'}),
+>>>>>>> Memory-FrontEnd/master
     provideIcons({
       heroArrowLeft,
       heroArrowPath,
@@ -33,4 +41,8 @@ export const appConfig: ApplicationConfig = {
       heroFaceSmile,
     }),
   ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> Memory-FrontEnd/master
 };
